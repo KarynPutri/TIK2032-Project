@@ -95,6 +95,22 @@ nav a:hover, .nav-links a:hover {
     flex-wrap: wrap;
 }
 
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #005b96; /* warna biru yang konsisten */
+    box-shadow: 0 4px 12px rgba(0, 91, 150, 0.3); /* bayangan halus */
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+}
+
+
 /* Blog Post */
 .blog-post {
     background-color: white;
@@ -230,6 +246,18 @@ a img {
 a img:hover {
     transform: scale(1.1);
 }
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 /* Responsive */
 @media (max-width: 768px) {
