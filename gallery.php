@@ -10,10 +10,10 @@
     <h1>Gallery</h1>
     <hr>
         <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="blog.html">Blog</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.php">Home</a>
+        <a href="gallery.php">Gallery</a>
+        <a href="blog.php">Blog</a>
+        <a href="contact.php">Contact</a>
     </div>
     <hr>    
     <div class="gallery">
