@@ -8,7 +8,7 @@
     <title>Teknologi dalam Pendidikan</title>
   </head>
   <body>
-    <a href="blog.html">Kembali ke blog</a>
+    <a href="blog.php">Kembali ke blog</a>
       <h1>Teknologi dalam Pendidikan</h1>
       <img
         src="Images/article1.jpg"
@@ -53,5 +53,31 @@
 
       <hr />
     </div>
+    <hr>
+<h3>Tinggalkan Komentar</h3>
+<form action="simpan_komentar.php" method="post">
+    <input type="hidden" name="artikel" value="article1.php"> <!-- ubah sesuai artikel -->
+    <label for="nama">Nama:</label><br>
+    <input type="text" name="nama" required><br><br>
+    <label for="komentar">Komentar:</label><br>
+    <textarea name="komentar" rows="4" cols="50" required></textarea><br><br>
+    <input type="submit" value="Kirim Komentar">
+</form>
+
+<h3>Komentar:</h3>
+<?php
+include 'koneksi.php';
+$artikel = "article1.php"; // ubah sesuai artikel
+$sql = "SELECT nama, komentar FROM komentar WHERE artikel = '$artikel' ORDER BY id DESC";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        echo "<p><strong>" . htmlspecialchars($row['nama']) . ":</strong><br>" . nl2br(htmlspecialchars($row['komentar'])) . "</p>";
+    }
+} else {
+    echo "<p>Belum ada komentar.</p>";
+}
+?>
   </body>
 </html>
